@@ -18,7 +18,7 @@ pod 'RSKImageCropper'
 
 #### 框架使用
 
-使用一个 `imageView` 初始化一个 `RSKImageCropViewController`
+使用一个 `image` 初始化一个 `RSKImageCropViewController`
 
 ```swift
 let croper = RSKImageCropViewController(image: (photos?.first)!, cropMode: .custom)
@@ -51,7 +51,7 @@ self.present(croper, animated: true)
     }
 
 		// RSKImageCropViewControllerDataSource
-    // 返回矩阵来设置裁剪框
+    // 返回图片位置
     func imageCropViewControllerCustomMaskRect(_ controller: RSKImageCropViewController) -> CGRect {
         return CGRect.init(x: (screenWidth-100)/2, y: (screenHeight-100)/2, width: 200, height: 200)
     }
@@ -74,3 +74,4 @@ self.present(croper, animated: true)
 ```
 
 注意：虽然可以通过返回UIBezierPath展示不同形状的效果，但裁剪还是以返回的CGRect为准。建议返回相同的区域。
+
